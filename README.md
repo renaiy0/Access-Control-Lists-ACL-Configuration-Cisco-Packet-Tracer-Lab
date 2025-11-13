@@ -1,73 +1,63 @@
-
 # Access Control Lists (ACL) Configuration — Cisco Packet Tracer Lab
 
-This project demonstrates the implementation of **Access Control Lists (ACL)** in **Cisco Packet Tracer** to manage and secure network traffic across multiple routers.  
-The configuration applies both **Standard** and **Extended ACLs** to control which hosts or networks can access specific destinations or services.
+This project demonstrates the configuration and testing of **Access Control Lists (ACL)** in **Cisco Packet Tracer**.  
+The purpose of this lab is to apply both **Standard** and **Extended ACLs** to manage and secure network traffic by allowing or denying specific access between devices.
 
 ---
 
 ## 📘 Overview
 
-Access Control Lists (ACLs) are a fundamental part of network security and traffic management.  
-In this lab, ACLs are used to:
-- Filter and control network traffic based on IP addresses, protocols, and ports  
-- Restrict access between different subnets  
-- Simulate real-world network policies using router configurations  
-
-This setup helps visualize how ACLs affect data flow within a LAN or multi-router environment.
+Access Control Lists (ACLs) are a fundamental part of network security.  
+They define which hosts or networks are permitted or denied access through a router interface.  
+In this lab:
+- The **PC** is allowed to access the web server.
+- The **Laptop** is blocked (ping and HTTP requests are unreachable).  
+This validates proper ACL filtering and network security policy enforcement.
 
 ---
 
 ## 🧩 Network Topology
 
-The topology consists of three routers and multiple end devices connected through switches.  
-Each router is configured with routing and ACL rules to enforce access policies.  
-A visual representation of the topology is included in the `/assets/` directory.
+The topology consists of three routers connected to end devices (a PC, a Laptop) and a web/DNS server.  
+Routing and ACLs are configured to demonstrate real-world access control behavior.
+
+### 📷 Network Diagram
+![Network Topology](./assets/topology.png)
 
 ---
 
-## 📂 Assets
+## 📸 Screenshots
 
-All related files and screenshots are stored in the `/assets/` directory:
-/assets/
-├── ROUTER0CLI # Router 0 configuration
-├── ROUTER1CLI # Router 1 configuration
-├── ROUTER2CLI # Router 2 configuration
-└── topology # Network topology diagram
+Below are screenshots captured from Cisco Packet Tracer showing ACL implementation and test results.
 
+### 🔹 Router Configurations
+![Router 0 CLI](./assets/ROUTER0CLI.png)  
+![Router 1 CLI](./assets/ROUTER1CLI.png)  
+![Router 2 CLI](./assets/ROUTER2CLI.png)
+
+### 🔹 Ping & Web Access Tests
+**From PC (Allowed):**
+![PC Test](./assets/PC-Test.png)
+
+**From Laptop (Denied / Unreachable):**
+![Laptop Test](./assets/Laptop-Test.png)
 
 ---
 
 ## ⚙️ Tools Used
 - **Cisco Packet Tracer**
 - **Router & Switch CLI Configuration**
+- **Basic ICMP (ping) and HTTP testing**
 
 ---
 
-## 🧠 Key Features
-- Implementation of **Standard** and **Extended** ACLs  
-- Traffic control between internal networks  
-- Verification using `ping`, `traceroute`, and web access  
-- Simulation of real-world access restrictions  
+## 💻 Full ACL Configuration
 
----
+Below are the full ACL commands applied to enforce the access policy.
 
-## 🧾 Results
-
-After applying ACL configurations, network access is properly restricted according to defined policies.  
-Verification tests confirm that only permitted traffic passes through while unauthorized requests are blocked.
-
----
-
-Router(config)# access-list 110 permit tcp 192.168.10.2 0.0.0.0 host 192.168.1.1 eq 80
-Router(config)# access-list 110 deny ip any host 192.168.1.1
-Router(config)# interface fa0/1
-Router(config-if)# ip access-group 110 out
-
----
-
-
-## 📅 Date
-**November 13, 2025**
-
-
+### 🔹 Standard ACL Example
+```bash
+Router(config)# access-list 10 permit 192.168.10.2
+Router(config)# access-list 10 deny any
+Router(config)# interface fa0/0
+Router(config-if)# ip access-group 10 in
