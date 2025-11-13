@@ -68,3 +68,10 @@ Router(config)# access-list 100 permit ip 192.168.10.0 0.0.0.255 192.168.1.0 0.0
 Router(config)# access-list 100 deny ip 192.168.10.3 0.0.0.0 192.168.1.0 0.0.0.255
 Router(config)# interface fa0/1
 Router(config-if)# ip access-group 100 out
+
+and for individual ip
+
+Router(config)# access-list 1 deny 192.168.10.3
+Router(config)# access-list 1 permit any
+Router(config)# interface fa0/0
+Router(config-if)# ip access-group 1 in
