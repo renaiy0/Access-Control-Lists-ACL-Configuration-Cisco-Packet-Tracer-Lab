@@ -59,6 +59,14 @@ Verification tests confirm that only permitted traffic passes through while unau
 
 ---
 
+Router(config)# access-list 110 permit tcp 192.168.10.2 0.0.0.0 host 192.168.1.1 eq 80
+Router(config)# access-list 110 deny ip any host 192.168.1.1
+Router(config)# interface fa0/1
+Router(config-if)# ip access-group 110 out
+
+---
+
+
 ## 📅 Date
 **November 13, 2025**
 
