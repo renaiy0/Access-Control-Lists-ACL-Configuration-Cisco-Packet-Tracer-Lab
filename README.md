@@ -1,4 +1,4 @@
-# Access-Control-Lists-ACL-Configuration-Cisco-Packet-Tracer-Lab
+
 # Access Control Lists (ACL) Configuration — Cisco Packet Tracer Lab
 
 This project demonstrates the implementation of **Access Control Lists (ACL)** in **Cisco Packet Tracer** to manage and secure network traffic across multiple routers.  
@@ -29,4 +29,37 @@ A visual representation of the topology is included in the `/assets/` directory.
 ## 📂 Assets
 
 All related files and screenshots are stored in the `/assets/` directory:
+/assets/
+├── ROUTER0CLI # Router 0 configuration
+├── ROUTER1CLI # Router 1 configuration
+├── ROUTER2CLI # Router 2 configuration
+└── topology # Network topology diagram
+
+
+---
+
+## ⚙️ Tools Used
+- **Cisco Packet Tracer**
+- **Router & Switch CLI Configuration**
+
+---
+
+## 🧠 Key Features
+- Implementation of **Standard** and **Extended** ACLs  
+- Traffic control between internal networks  
+- Verification using `ping`, `traceroute`, and web access  
+- Simulation of real-world access restrictions  
+
+---
+
+## 🧾 Results
+
+After applying ACL configurations, network access is properly restricted according to defined policies.  
+Verification tests confirm that only permitted traffic passes through while unauthorized requests are blocked.
+
+---
+
+## 📅 Date
+**November 13, 2025**
+
 
