@@ -61,3 +61,10 @@ Router(config)# access-list 10 permit 192.168.10.2
 Router(config)# access-list 10 deny any
 Router(config)# interface fa0/0
 Router(config-if)# ip access-group 10 in
+
+```bash
+exampel :
+Router(config)# access-list 100 permit ip 192.168.10.0 0.0.0.255 192.168.1.0 0.0.0.255
+Router(config)# access-list 100 deny ip 192.168.10.3 0.0.0.0 192.168.1.0 0.0.0.255
+Router(config)# interface fa0/1
+Router(config-if)# ip access-group 100 out
