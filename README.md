@@ -31,16 +31,11 @@ Routing and ACLs are configured to demonstrate real-world access control behavio
 Below are screenshots captured from Cisco Packet Tracer showing ACL implementation and test results.
 
 ### 🔹 Router Configurations
-![Router 0 CLI](./assets/ROUTER0CLI.png)  
-![Router 1 CLI](./assets/ROUTER1CLI.png)  
-![Router 2 CLI](./assets/ROUTER2CLI.png)
-
-### 🔹 Ping & Web Access Tests
-**From PC (Allowed):**
-![PC Test](./assets/PC-Test.png)
+![Router 0 CLI](./assets/CLI1.png)  
+![Router 1 CLI](./assets/CLI2.png)  
 
 **From Laptop (Denied / Unreachable):**
-![Laptop Test](./assets/Laptop-Test.png)
+![Laptop Test](./assets/LAPTOPISBLOCKED.png)
 
 ---
 
